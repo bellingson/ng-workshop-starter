@@ -1,0 +1,46 @@
+
+<div class="row product-list">
+
+    {{#each products}}
+
+        <div class="col-xs-12 col-sm-4">
+
+            <div class="product">
+
+                <h3>{{name}}</h3>
+
+                <a href="/product/{{id}}">
+                    {{#if imageName}}
+                        <img src="/images/{{imageName}}" alt="{{name}}"/>
+                    {{else}}
+                        <img src="/images/placeholder.jpg" alt="{{name}}"/>
+                    {{/if}}
+                </a>
+
+                <p>
+                    {{summary description}}
+                </p>
+
+                <div class="buy-bar clearfix">
+                    <div class="pull-left">
+                        {{currency price}}
+                    </div>
+                    <div class="pull-right">
+                        <a href="/product/{{id}}" class="btn btn-primary">Buy</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+
+    {{/each}}
+
+
+</div>
+
+

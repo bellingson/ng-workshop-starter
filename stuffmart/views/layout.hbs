@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+  </head>
+  <body>
+
+  <div class="top-bar">
+      <div class="container">
+          <div class="pull-left home">
+              <span class="glyphicon glyphicon-shopping-cart"></span>
+              <a class="home" href="/">Stuff Mart</a>
+          </div>
+
+          <nav class="pull-right">
+              <ul>
+                    {{#if user}}
+
+
+                        <li>Hello, {{{user.username}}}</li>
+                        <li><a id="logout" href="/logout">Sign Out</a>
+
+                            <form id="logout-form" action="/logout"  method="post">
+                                <input type="hidden"
+                                       name="${_csrf.parameterName}"
+                                       value="${_csrf.token}"/>
+                            </form>
+
+                        </li>
+                    {{else}}
+                        <li><a href="/login">Sign In</a></li>
+                    {{/if}}
+
+              </ul>
+          </nav>
+
+      </div>
+  </div>
+
+    <div class="container body">
+
+        {{{body}}}
+
+    </div>
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+
+<div class="row product-page">
+
+        <div class="col-xs-12">
+
+            <div class="product">
+
+                <h1>{{product.name}}</h1>
+
+                <div class="clearfix">
+
+                    <div class="pull-left">
+
+                        {{#if product.imageName}}
+                            <img src="/images/{{product.imageName}}" alt="{{product.name}}"/>
+                        {{else}}
+                            <img src="/images/placeholder.jpg" alt="{{product.name}}"/>
+                        {{/if}}
+
+
+                    </div>
+                    <div class="pull-left buy-now">
+
+                        <div class="price">
+                            {{currency product.price}}
+                        </div>
+
+                        <button class="btn btn-primary">Buy Now</button>
+
+                    </div>
+
+
+                </div>
+                
+                <p>
+                    {{product.description}}
+                </p>
+
+
+
+            </div>
+
+
+        </div>
+
+</div>
+
+
