@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a226494-bf12-41b7-a728-1d7acf9b6339" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/product-mgr/src/app/product/products.ts" afterPath="$PROJECT_DIR$/product-mgr/src/app/product/product.data.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ng-workshop-starter.iws" afterPath="$PROJECT_DIR$/ng-workshop-starter.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stuffmart/app.js" afterPath="$PROJECT_DIR$/stuffmart/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stuffmart/package.json" afterPath="$PROJECT_DIR$/stuffmart/package.json" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,11 +28,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/stuffmart/app.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="502">
               <caret line="35" column="27" lean-forward="false" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/stuffmart/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="39" lean-forward="false" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -78,6 +86,7 @@
         <option value="$PROJECT_DIR$/product-mgr/src/index.html" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/stuffmart/app.js" />
+        <option value="$PROJECT_DIR$/stuffmart/package.json" />
       </list>
     </option>
   </component>
@@ -573,16 +582,16 @@
       <workItem from="1490547736517" duration="6092000" />
       <workItem from="1490555340145" duration="49000" />
       <workItem from="1490555392857" duration="167000" />
-      <workItem from="1490563235150" duration="452000" />
+      <workItem from="1490563235150" duration="661000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6760000" />
+    <option name="totallyTimeSpent" value="6969000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1053" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -686,6 +695,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="502">
           <caret line="35" column="27" lean-forward="false" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stuffmart/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="39" lean-forward="false" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
           <folding />
         </state>
       </provider>
