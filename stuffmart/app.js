@@ -33,7 +33,7 @@ security.configure(app);
 app.use('/', index);
 app.use('/login', login);
 app.use('/admin', admin);
-app.use('/api/product', product);
+app.use('/api/admin/product', product);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
