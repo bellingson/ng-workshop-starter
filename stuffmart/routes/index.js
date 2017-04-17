@@ -6,24 +6,25 @@ var currencyFormatter = require('currency-formatter');
 
 var _ = require('lodash');
 
-let products;
+let db;
 
 /* GET home page. */
-router.get('/', function(req, res, next) {	
-  res.render('index', { products: products, user: req.user });
+router.get('/', function(req, res, next) {
+    res.render('index', { products: db.products, user: req.user });
 });
 
 router.get('/product/:id', function(req, res, next) {
 
     let id = parseInt(req.params.id, 10);
-    let product = _.find(products, product => product.id === id);
+    let product = _.find(db.products, product => product.id === id);
 
     res.render('product', { product: product, user: req.user });
 });
 
-router.init = function(_products) {
+router.init = function(_db) {
 
-    products = _products;
+    db = _db;
+
     return router;
 
 }

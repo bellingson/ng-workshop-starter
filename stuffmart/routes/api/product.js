@@ -4,41 +4,41 @@ var router = express.Router();
 
 var _ = require('lodash');
 
-let products;
+let db;
 
 let OK = { message: 'ok' };
 
 router.get('/', function (req, res, next) {
 
-     if(req.query.findText == null) {
-         res.send(products);
-         return;
-     }
+    if(req.query.findText == null) {
+        res.send(db.products);
+        return;
+    }
 
-     // return a filtered search
-     let findText = req.query.findText.toLowerCase();
+    // return a filtered search
+    let findText = req.query.findText.toLowerCase();
 
-     let _products = _.filter(products, product => {
+    let _products = _.filter(db.products, product => {
             return _.includes(product.name.toLowerCase(), findText);
-         });
+});
 
-     res.send(_products);
-    
+    res.send(_products);
+
 });
 
 router.get('/:id', function (req, res, next) {
 
     let productId = parseInt(req.params.id, 10);
 
-    let product = _.find(products, p => p.id === productId );
+    let product = _.find(db.products, p => p.id === productId );
     res.send(product);
 });
 
 router.post('/', function (req, res, next) {
 
     let product = req.body;
-    product.id = _(products).map(p => p.id).max() + 1;
-    products.push(product);
+    product.id = _(db.products).map(p => p.id).max() + 1;
+    db.products.push(product);
 
     res.send(OK);
 });
@@ -48,10 +48,10 @@ router.put('/:id', function (req, res, next) {
     let productId = parseInt(req.params.id, 10);
     let _product = req.body;
 
-    let _products = _.filter(products, p => p.id != productId);
+    let _products = _.filter(db.products, p => p.id != productId);
     _products.push(_product);
 
-    products = _.sortBy(_products,'id');
+    db.products = _.sortBy(_products,'id');
 
     res.send(OK);
 });
@@ -59,15 +59,15 @@ router.put('/:id', function (req, res, next) {
 router.delete('/:id', function (req, res, next) {
 
     let productId = parseInt(req.params.id, 10);
-    products = _.filter(products, p => p.id != productId);
+    db.products = _.filter(db.products, p => p.id != productId);
 
     res.send(OK);
 });
 
 
-router.init = function(_products) {
+router.init = function(_db) {
 
-    products = _products;
+    db = _db;
     return router;
 
 }

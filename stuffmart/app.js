@@ -6,13 +6,14 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 
-var productsData = require('./products.json');
+var products = require('./products.json');
+var db  = { products: products };
 var security = require('./security');
 
-var index = require('./routes/index').init(productsData);
+var index = require('./routes/index').init(db);
 var admin = require('./routes/admin');
 var login = require('./routes/login');
-var product = require('./routes/api/product').init(productsData);
+var product = require('./routes/api/product').init(db);
 
 var app = express();
 
@@ -37,20 +38,20 @@ app.use('/api/admin/product', product);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+    var err = new Error('Not Found');
+    err.status = 404;
+    next(err);
 });
 
 // error handler
 app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+    // set locals, only providing error in development
+    res.locals.message = err.message;
+    res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+    // render the error page
+    res.status(err.status || 500);
+    res.render('error');
 });
 
 module.exports = app;
